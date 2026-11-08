@@ -1,0 +1,74 @@
+[lints]
+workspace = true
+
+[package]
+name = "grat"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Grat CLI — Soroban Transaction Debugger"
+build = "build.rs"
+
+[[bin]]
+name = "grat"
+path = "src/main.rs"
+
+[dependencies]
+grat-core = { workspace = true }
+fs2     = "0.4"
+walkdir = "2"
+reqwest = { workspace = true }
+libc = { workspace = true }
+
+# CLI Framework
+clap = { workspace = true }
+clap_complete = "4"
+anyhow = { workspace = true }
+colored = { workspace = true }
+owo-colors = "4"
+indicatif = { workspace = true }
+dialoguer = { workspace = true }
+tabled = { workspace = true }
+termcolor = { workspace = true }
+
+# Async
+tokio = { workspace = true }
+tokio-tungstenite = { workspace = true }
+futures-util = { workspace = true }
+axum = { version = "0.7", features = ["ws"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["fs", "trace"] }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+
+# Security & Credentials
+rpassword = { workspace = true }
+
+# TUI (Tier 3)
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+
+# Paths
+directories = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+semver = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "5.0"
+url = "2"
+
+# Markdown
+pulldown-cmark = { workspace = true }
+unicode-width = { workspace = true }
+
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "3"
+tempfile = "3"
+stellar-xdr = { workspace = true }
